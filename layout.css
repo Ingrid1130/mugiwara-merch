@@ -1,0 +1,108 @@
+  
+       head {
+            box-sizing: border-box;
+            }
+  /* ini Style headernya */
+        header {
+            background-image: url("banner1.jpg");
+            background-repeat:no-repeat;
+            background-position: center;
+            background-size: cover;
+            padding: 70px;
+               }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+ nav {
+	background-color:#990505; 
+	height:50px; 
+	line-height:50px; 
+	position:relative;
+	width:1310px;
+	margin:auto;
+	margin-top:5px;
+}
+
+nav ul {
+	list-style:none;
+}
+nav ul li a {
+	float:left; 
+	width:175px; 
+	display:block; 
+	text-align:center; 
+	color:#FFF; 
+	text-decoration:none; 
+	text-transform:uppercase;
+}
+
+nav ul li a:hover {
+	background-color:#666; 
+	display:block;
+}
+
+nav ul li:hover ul {
+	display:block;
+}
+nav ul ul {
+	display:none; 
+	list-style:none; 
+	position:absolute; 
+	background-color:#900;
+	left:300px; 
+	top:50px; 
+	width:190px;
+}
+
+nav ul ul li a {
+	float:none; 
+	display:block; 
+	padding-left:30px; 
+	text-align:left; 
+	width:160px;
+}
+
+nav ul ul li a:hover {
+	color:#990;
+}
+       
+        
+        nav a
+        {
+            color: white;
+        }
+ 
+        article {
+            float: left;
+            padding: 50px;
+            width:100%;
+            background-color: #f1f1f1;
+            height: 600px;
+            /* hanya untuk contoh saja */
+        }
+ 
+        /* Clear floats after the columns */
+        section:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+ 
+        /* Style the footer */
+        footer {
+            background-color: green;
+            padding: 5px;
+            text-align: center;
+            color: white;
+        }
+ 
+        /* Responsive layout - buat 2 kolom/kotak */
+        @media (max-width: 600px) {
+ 
+            nav,
+            article {
+                width: 100%;
+                height: auto;
+            }
+        }
+   

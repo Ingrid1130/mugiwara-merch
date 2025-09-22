@@ -1,0 +1,116 @@
+<html>
+ <head>
+  <title>.::Merch Anime::.</title>
+  <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href="popup.css">
+ </head>
+
+ <body>
+  <center><img src="BB/1 (4).jpg" widht=1100></center>
+  <center>
+  <h1>.:: Welcome to Our Product ::.</h1>
+  </center>
+  
+  <nav>
+  <ul>
+      <li><a href="#"target="_blank">Home</a></li>
+      <li><a href="p.html">Profil</a></li>
+    <li>
+       <a href="#">Produk</a>
+    <ul>
+       <li><a href="poster.html">Poster</a></li>
+       <li><a href="plushie.html">Plushie</a></li>
+       <li><a href="keychain.html">Keychain</a></li>
+       <li><a href="standee.html">Standee</a></li>
+       <li><a href="sticker.html">Sticker</a></li>
+    </ul>  
+   </li>
+       <li><a href="m.html">Mitra</a></li>
+       <li><a href="kp.html">Kredit Produk</a></li>
+       <li><a href="sc.html">Service Center</a></li>
+       <li><a href="kk.html">Kontak Kami</a></li>
+  </li>
+ </nav>
+
+<p>
+Selamat datang di websiteku. klik menu di atas,
+untuk membuka halaman yang berbeda Semua link diatas adalah internal link
+</p>
+<center><h2>PLUSHIE</h2></center>
+<table border=1 align="center" cellpadding="10" cellspacing="12" bordercolor="white">
+	<tr><td><img src="PE/1 (1).jpeg" width=200>
+	<p>Luffy Cute Plushie<p>
+	<p><font color="Red"> Rp. 164.325</font></p> <button onclick="openPopup('Luffy Cute Plushiec','PE/1 (1).jpeg','Rp. 164.325')">Beli</button>
+	</td>
+
+	<td><img src="PE/1 (6).jpeg" width=200>
+	<p>Sanji Cute Plushie<p>
+	<p><font color="Red"> Rp. 217.283</font></p> <button onclick="openPopup('Sanji Cute Plushie','PE/1 (6).jpeg','Rp. 217.283')">Beli</button> </td>
+
+	<td><img src="PE/1 (2).jpeg" width=200>
+	<p>Luffy and Zoro (Wano) Cute Plushie 1 SET<p>
+	<p><font color="Red"> Rp. 588.354</font></p> <button onclick="openPopup('Luffy and Zoro (Wano) Cute Plushie 1 SET','PE/1 (2).jpeg','Rp. 588.354')">Beli</button></td>
+
+	<td><img src="PE/1 (4).jpeg" width=200>
+	<p>Ace Cute Plushie<p>
+	<p><font color="Red"> Rp. 254.754</font></p> <button onclick="openPopup('Ace Cute Plushie','PE/1 (4).jpeg','Rp. 254.754')">Beli</button></td>
+
+	<td><img src="PE/1 (3).jpeg" width=200>
+	<p>Luffy and Zoro Cute Plushie (1 SET)<p>
+	<p><font color="Red"> Rp. 678.569</font></p> <button onclick="openPopup('Luffy and Zoro Cute Plushie (1 SET)','PE/1 (3).jpeg','Rp. 678.569')">Beli</button></td></tr>
+
+
+
+	<tr><td><img src="PE/1 (5).jpeg" width=200>
+	<p>Luffy Cute Plushie<p>
+	<p><font color="Red"> Rp. 217.887</font></p> <button onclick="openPopup('Luffy Cute Plushie','PE/1 (5).jpeg','Rp. 217.887')">Beli</button></td>
+
+	<td><img src="PE/1 (11).jpeg" width=200>
+	<p>Nakama Cute Crochet(6PCS)<p>
+	<p><font color="Red"> Rp. 67.954</font></p> <button onclick="openPopup('Nakama Cute Crochet','PE/1 (11).jpeg','Rp. 67.954')">Beli</button></td>
+
+	<td><img src="PE/1 (8).jpeg" width=200>
+	<p>Zoro Cute Plushie <p>
+	<p><font color="Red"> Rp. 134.245</font></p> <button onclick="openPopup('Zoro Cute Plushie','PE/1 (8).jpeg','Rp. 134.245')">Beli</button></td>
+
+	<td><img src="PE/1 (9).jpeg" width=200>
+	<p>Luffy Mini Cute Plushie<p>
+	<p><font color="Red"> Rp. 68.234</font></p> <button onclick="openPopup('Luffy Mini Cute Plushie','PE/1 (9).jpeg','Rp. 68.234')">Beli</button></td>
+
+	<td><img src="PE/1 (10).jpeg" width=200>
+	<p>Ace Mini Cute Plushie<p>
+	<p><font color="Red"> Rp. 67.923</font></p> <button onclick="openPopup('Ace Mini Cute Plushie','PE/1 (10).jpeg','Rp. 67.923')">Beli</button></td>
+</table>
+
+<hr>
+<div>Copyright &copy; 2025 by IRB-IF1</div>
+
+
+<!-- Overlay -->
+<div id="overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5);"></div>
+
+<!-- Popup -->
+<div id="popup" class="popup">
+  <img id="popupGambar" src="" alt="">
+  <h3 id="popupNama"></h3>
+  <p id="popupHarga"></p>
+  
+  <h4>Masukkan Jumlah Produk</h4>
+  <input type="number" id="jumlah" min="1" value="1">
+  <br><br>
+  <button onclick="beli()">Beli</button>
+  <button onclick="closePopup()">Tutup</button>
+</div>
+
+
+<script src="popup.js"></script>
+
+<!-- Badge keranjang di pojok kanan atas -->
+<div style="position:fixed; top:10px; right:20px; font-size:20px;">
+  <a href="cart.html" style="text-decoration:none; color:black;">
+    🛒 <span id="cartCount">0</span>
+  </a>
+</div>
+
+</body>
+</html>
