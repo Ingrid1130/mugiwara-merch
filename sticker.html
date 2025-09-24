@@ -2,6 +2,7 @@
  <head>
   <title>.::Merch Anime::.</title>
   <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href="popup.css">
  </head>
 
  <body>
@@ -38,50 +39,79 @@ untuk membuka halaman yang berbeda Semua link diatas adalah internal link
 <center><h2>STICKER</h2></center>
 <table border=1 align="center" cellpadding="10" cellspacing="12" bordercolor="white">
 	<tr><td><img src="SR/1 (5).jpeg" width=200>
-	<p>Mr 2 Cute Sticker<p>
-	<p><font color="Red"> Rp. 16.678</font>
+	<p>	Mr 2 Cute Sticker<p>
+	<p><font color="Red"> Rp. 16.678</font></p> <button onclick="openPopup('Mr 2 Cute Sticker','SR/1 (5).jpeg','Rp. 16.678')">Beli</button>
 	</td>
 
 	<td><img src="SR/1 (6).jpeg" width=200>
 	<p>Luffy Cute Sticker<p>
-	<p><font color="Red"> Rp. 17.587</font></p> </td>
+	<p><font color="Red"> Rp. 17.587</font></p> <button onclick="openPopup('Luffy Cute Sticker','SR/1 (6).jpeg','Rp. 17.587')">Beli</button> </td>
 
 	<td><img src="SR/1 (11).jpeg" width=200>
 	<p>Nakama Cute Sticker<p>
-	<p><font color="Red"> Rp. 15.668</font></td>
+	<p><font color="Red"> Rp. 15.668</font></p> <button onclick="openPopup('Nakama Cute Sticker','SR/1 (11).jpeg','Rp. 15.668')">Beli</button></td>
 
 	<td><img src="SR/1 (12).jpeg" width=200>
-	<p>Luffy2 Cute Stickere<p>
-	<p><font color="Red"> Rp. 13.679</font></td>
+	<p>Luffy2 Cute Sticker<p>
+	<p><font color="Red"> Rp. 13.679</font></p> <button onclick="openPopup('Luffy2 Cute Sticker','SR/1 (12).jpeg','Rp. 13.679')">Beli</button></td>
 
 	<td><img src="SR/1 (2).jpeg" width=200>
 	<p>One Piece Nakama Cute Sticker<p>
-	<p><font color="Red"> Rp. 25.625</font></td></tr>
+	<p><font color="Red"> Rp. 25.625</font></p> <button onclick="openPopup('One Piece Nakama Cute Sticker','SR/1 (2).jpeg','Rp. 25.625')">Beli</button></td></tr>
 
 
 
 	<tr><td><img src="SR/1 (8).jpeg" width=200>
 	<p>Ace Cute Sticker<p>
-	<p><font color="Red"> Rp. 21.672</font></td>
+	<p><font color="Red"> Rp. 21.672</font></p> <button onclick="openPopup('Ace Cute Sticker','SR/1 (8).jpeg','Rp. 21.672')">Beli</button></td>
 
 	<td><img src="SR/1 (3).jpeg" width=200>
 	<p>One Piece Nakama Sticker(9PCS)<p>
-	<p><font color="Red"> Rp. 30.256</font></td>
+	<p><font color="Red"> Rp. 30.256</font></p> <button onclick="openPopup('One Piece Nakama Sticker','SR/1 (3).jpeg','Rp. 30.256')">Beli</button></td>
 
 	<td><img src="SR/1 (1).jpeg" width=200>
 	<p>One Piece Luffy Fanart Cute Sticker(9PCS)<p>
-	<p><font color="Red"> Rp. 35.857</font></td>
+	<p><font color="Red"> Rp. 35.857</font></p> <button onclick="openPopup('One Piece Luffy Fanart Cute Sticker(9PCS)','SR/1 (1).jpeg','Rp. 35.857')">Beli</button></td>
 
 	<td><img src="SR/1 (7).jpeg" width=200>
 	<p>Nakama2 Cute Sticker<p>
-	<p><font color="Red"> Rp. 8.647</font></td>
+	<p><font color="Red"> Rp. 8.647</font></p> <button onclick="openPopup('Nakama2 Cute Sticker','SR/1 (7).jpeg','Rp. 8.647')">Beli</button></td>
 
 	<td><img src="SR/1 (9).jpeg" width=200>
 	<p>One Piece Nakama with Merry Go cute Sticker<p>
-	<p><font color="Red"> Rp. 10.134</font></td>
+	<p><font color="Red"> Rp. 10.134</font></p> <button onclick="openPopup('One Piece Nakama with Merry Go cute Sticker','SR/1 (9).jpeg','Rp. 10.134')">Beli</button></td></tr>
 </table>
 
 <hr>
 <div>Copyright &copy; 2025 by IRB-IF1</div>
+	 
+<!-- Overlay -->
+<div id="overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5);"></div>
+
+<!-- Popup -->
+<div id="popup" class="popup">
+  <img id="popupGambar" src="" alt="">
+  <h3 id="popupNama"></h3>
+  <p id="popupHarga"></p>
+  
+  <h4>Masukkan Jumlah Produk</h4>
+  <input type="number" id="jumlah" min="1" value="1">
+  <br><br>
+  <button onclick="beli()">Beli</button>
+  <button onclick="closePopup()">Tutup</button>
+</div>
+
+
+<script src="popup.js"></script>
+
+<!-- Badge keranjang di pojok kanan atas -->
+<div style="position:fixed; top:10px; right:20px; font-size:20px;">
+  <a href="cart.html" style="text-decoration:none; color:black;">
+    🛒 <span id="cartCount">0</span>
+  </a>
+</div>
+
+
 </body>
+
 </html>
