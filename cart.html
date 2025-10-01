@@ -1,113 +1,7 @@
 <html>
 <head>
   <title>Keranjang Belanja</title>
-  <link rel="stylesheet" href="layout.css">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f7f7f7;
-      margin: 0;
-      padding: 0;
-    }
-    h1 {
-      text-align: center;
-      margin: 20px 0;
-    }
-    .container {
-      max-width: 900px;
-      margin: auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 10px;
-    }
-    th, td {
-      padding: 12px;
-      border: 1px solid #ddd;
-      text-align: center;
-    }
-    th {
-      background: #f0f0f0;
-    }
-    button {
-      background: #ff4d4d;
-      color: white;
-      border: none;
-      padding: 8px 14px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 14px;
-    }
-    button:hover {
-      background: #cc0000;
-    }
-    .total {
-      margin-top: 20px;
-      font-size: 18px;
-      text-align: right;
-      font-weight: bold;
-    }
-    .actions {
-      text-align: center;
-      margin-top: 20px;
-    }
-    .actions button {
-      margin: 5px;
-      background: #007bff;
-    }
-    .actions button:hover {
-      background: #0056b3;
-    }
-
-    /* Popup Form */
-    .popup {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.5);
-      justify-content: center;
-      align-items: center;
-    }
-    .popup-content {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      width: 350px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    }
-    .popup-content h2 {
-      text-align: center;
-      margin-bottom: 15px;
-    }
-    .popup-content input, .popup-content select {
-      width: 100%;
-      padding: 10px;
-      margin: 8px 0;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    .popup-content button {
-      width: 100%;
-      margin-top: 10px;
-      background: #28a745;
-    }
-    .popup-content button:hover {
-      background: #218838;
-    }
-    .close-btn {
-      background: #dc3545 !important;
-      margin-top: 5px;
-    }
-    .close-btn:hover {
-      background: #a71d2a !important;
-    }
-  </style>
+  <link rel="stylesheet" href="cart.css">
 </head>
 <body>
   <h1>🛒 Keranjang Belanja</h1>
@@ -136,6 +30,9 @@
         <option value="Laki-laki">Laki-laki</option>
         <option value="Perempuan">Perempuan</option>
       </select>
+      <!-- Tambahan alamat -->
+      <textarea id="alamat" placeholder="Alamat Pengiriman" required></textarea>
+      
       <button onclick="confirmOrder()">Konfirmasi Pemesanan</button>
       <button class="close-btn" onclick="closePopup()">Batal</button>
     </div>
@@ -210,14 +107,17 @@
     let email = document.getElementById("email").value;
     let telp = document.getElementById("telp").value;
     let gender = document.getElementById("gender").value;
+    let alamat = document.getElementById("alamat").value;
 
-    if (!nama || !username || !password || !email || !telp || !gender) {
+    if (!nama || !username || !password || !email || !telp || !gender || !alamat) {
       alert("⚠️ Harap isi semua field!");
       return;
     }
 
     closePopup();
-    alert("✅ Terima kasih, " + nama + "! Pesananmu sudah dicatat.\nSilakan tunggu email dari toko.");
+    alert("✅ Terima kasih, " + nama + 
+          "! Pesananmu sudah dicatat.\nAlamat: " + alamat +
+          "\nSilakan tunggu email dari toko.");
   }
 
   // Render saat halaman dibuka
