@@ -33,7 +33,7 @@ nav {
   margin: 10px auto;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  overflow: hidden;
+  overflow: visible; /* penting supaya dropdown tidak kepotong */
 }
 
 nav ul {
@@ -42,8 +42,12 @@ nav ul {
   margin: 0;
 }
 
-nav ul li a {
+nav ul li {
   float: left;
+  position: relative; /* supaya dropdown bisa ikut parent */
+}
+
+nav ul li a {
   width: 175px;
   display: block;
   text-align: center;
@@ -59,32 +63,34 @@ nav ul li a:hover {
 }
 
 /* Dropdown */
+nav ul li ul {
+  display: none;
+  position: absolute;
+  top: 55px; /* pas muncul tepat di bawah menu */
+  left: 0;
+  background-color: #b20d0d;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  min-width: 190px;
+  z-index: 99;
+}
+
 nav ul li:hover ul {
   display: block;
 }
 
-nav ul ul {
-  display: none;
-  list-style: none;
-  position: absolute;
-  background-color: #b20d0d;
-  left: 300px;
-  top: 55px;
-  width: 190px;
-  border-radius: 0 0 10px 10px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+nav ul li ul li {
+  float: none;
 }
 
-nav ul ul li a {
-  float: none;
-  display: block;
-  padding-left: 30px;
+nav ul li ul li a {
+  padding: 10px 20px;
   text-align: left;
-  width: 160px;
+  width: 100%;
   transition: all 0.3s ease;
 }
 
-nav ul ul li a:hover {
+nav ul li ul li a:hover {
   background-color: #fff;
   color: #990505;
 }
