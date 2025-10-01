@@ -100,6 +100,7 @@
   function closePopup() {
     document.getElementById("popupForm").style.display = "none";
   }
+
   function confirmOrder() {
     let nama = document.getElementById("nama").value;
     let username = document.getElementById("username").value;
@@ -114,10 +115,41 @@
       return;
     }
 
+    // Ambil keranjang
+    let keranjang = JSON.parse(localStorage.getItem("keranjang")) || [];
+    if (keranjang.length === 0) {
+      alert("Keranjang masih kosong!");
+      return;
+    }
+
+    // Ambil history lama
+    let history = JSON.parse(localStorage.getItem("history")) || [];
+    const tanggal = new Date().toLocaleString("id-ID");
+
+    keranjang.forEach(item => {
+      let hargaNum = parseInt(item.harga.replace(/\D/g, "")) || 0;
+      history.push({
+        nama: item.nama,
+        harga: hargaNum,
+        jumlah: 1,
+        total: hargaNum,
+        tanggal: tanggal,
+        pemesan: nama,
+        alamat: alamat
+      });
+    });
+
+    // Simpan ke localStorage
+    localStorage.setItem("history", JSON.stringify(history));
+
+    // Kosongkan keranjang setelah konfirmasi
+    localStorage.removeItem("keranjang");
+    renderCart();
+
     closePopup();
     alert("✅ Terima kasih, " + nama + 
           "! Pesananmu sudah dicatat.\nAlamat: " + alamat +
-          "\nSilakan tunggu email dari toko.");
+          "\nSilakan tunggu email dari toko.\nCek di halaman History untuk detail pesananmu.");
   }
 
   // Render saat halaman dibuka
