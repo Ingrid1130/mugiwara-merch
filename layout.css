@@ -1,108 +1,125 @@
-  
-       head {
-            box-sizing: border-box;
-            }
-  /* ini Style headernya */
-        header {
-            background-image: url("banner1.jpg");
-            background-repeat:no-repeat;
-            background-position: center;
-            background-size: cover;
-            padding: 70px;
-               }
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-        }
- nav {
-	background-color:#990505; 
-	height:50px; 
-	line-height:50px; 
-	position:relative;
-	width:1310px;
-	margin:auto;
-	margin-top:5px;
+/* Header */
+header {
+  background-image: url("banner1.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 70px;
+  text-align: center;
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  border-radius: 0 0 20px 20px;
+}
+
+/* Body */
+body {
+  font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+  background-color: #f7f7f7;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* Navigation */
+nav {
+  background-color: #990505;
+  height: 55px;
+  line-height: 55px;
+  position: relative;
+  width: 100%;
+  max-width: 1310px;
+  margin: 10px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
 }
 
 nav ul {
-	list-style:none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
+
 nav ul li a {
-	float:left; 
-	width:175px; 
-	display:block; 
-	text-align:center; 
-	color:#FFF; 
-	text-decoration:none; 
-	text-transform:uppercase;
+  float: left;
+  width: 175px;
+  display: block;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
 }
 
 nav ul li a:hover {
-	background-color:#666; 
-	display:block;
+  background-color: #b51a1a;
+  transform: scale(1.05);
 }
 
+/* Dropdown */
 nav ul li:hover ul {
-	display:block;
+  display: block;
 }
+
 nav ul ul {
-	display:none; 
-	list-style:none; 
-	position:absolute; 
-	background-color:#900;
-	left:300px; 
-	top:50px; 
-	width:190px;
+  display: none;
+  list-style: none;
+  position: absolute;
+  background-color: #b20d0d;
+  left: 300px;
+  top: 55px;
+  width: 190px;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
 nav ul ul li a {
-	float:none; 
-	display:block; 
-	padding-left:30px; 
-	text-align:left; 
-	width:160px;
+  float: none;
+  display: block;
+  padding-left: 30px;
+  text-align: left;
+  width: 160px;
+  transition: all 0.3s ease;
 }
 
 nav ul ul li a:hover {
-	color:#990;
+  background-color: #fff;
+  color: #990505;
 }
-       
-        
-        nav a
-        {
-            color: white;
-        }
- 
-        article {
-            float: left;
-            padding: 50px;
-            width:100%;
-            background-color: #f1f1f1;
-            height: 600px;
-            /* hanya untuk contoh saja */
-        }
- 
-        /* Clear floats after the columns */
-        section:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
- 
-        /* Style the footer */
-        footer {
-            background-color: green;
-            padding: 5px;
-            text-align: center;
-            color: white;
-        }
- 
-        /* Responsive layout - buat 2 kolom/kotak */
-        @media (max-width: 600px) {
- 
-            nav,
-            article {
-                width: 100%;
-                height: auto;
-            }
-        }
-   
+
+/* Article */
+article {
+  float: left;
+  padding: 40px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin: 20px auto;
+  min-height: 500px;
+}
+
+/* Footer */
+footer {
+  background-color: #990505;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  border-radius: 12px 12px 0 0;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  nav,
+  article {
+    width: 100%;
+    height: auto;
+  }
+
+  nav ul li a {
+    width: 100%;
+  }
+}
