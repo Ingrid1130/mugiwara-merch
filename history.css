@@ -84,3 +84,41 @@ body {
 .history-btn:hover {
   background: #1a5ec9;
 }
+
+/* Buttons */
+button {
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #cc0000;
+}
+
+/* Actions Section */
+.actions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.actions button {
+  margin: 5px;
+}
+
+.actions button:nth-child(2) {
+  background: #007bff;
+}
+.actions button:nth-child(2):hover {
+  background: #0056b3;
+}
+.actions button:last-child {
+  background: #28a745;
+}
+.actions button:last-child:hover {
+  background: #218838;
+}
